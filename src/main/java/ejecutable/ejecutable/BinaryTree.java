@@ -8,34 +8,42 @@ public class BinaryTree {
 
 	public static void main(String[] args) {
 		
-		System.out.println("ingrese números separados por coma...");
-
-		Scanner scanner = new Scanner(System.in);
-		String inputString = scanner.nextLine();
-		System.out.println(inputString);
-
-		BinaryTree theTree = new BinaryTree();
+		while(true) {
 		
-		String[] data = inputString.split(",");
-
-		for(int x = 0; x<data.length; x++) {
-			theTree.addNode(Integer.valueOf(data[x]));
+			System.out.println("ingrese números separados por coma...");
+	
+			Scanner scanner = new Scanner(System.in);
+			String inputString = scanner.nextLine();
+			System.out.println(inputString);
+			
+			if(inputString.equals("-1")) {
+				System.exit(0);
+			}
+	
+			BinaryTree theTree = new BinaryTree();
+			
+			String[] data = inputString.split(",");
+	
+			for(int x = 0; x<data.length; x++) {
+				theTree.addNode(Integer.valueOf(data[x]));
+			}
+			
+	
+			// Different ways to traverse binary trees
+	
+			// theTree.inOrderTraverseTree(theTree.root);
+	
+			// theTree.preorderTraverseTree(theTree.root);
+	
+			// theTree.postOrderTraverseTree(theTree.root);
+	
+			// Find the node with key 75
+	
+			System.out.println("\nNode with the key 4");
+	
+			System.out.println(theTree.findNode(4));
+		
 		}
-		
-
-		// Different ways to traverse binary trees
-
-		// theTree.inOrderTraverseTree(theTree.root);
-
-		// theTree.preorderTraverseTree(theTree.root);
-
-		// theTree.postOrderTraverseTree(theTree.root);
-
-		// Find the node with key 75
-
-		System.out.println("\nNode with the key 4");
-
-		System.out.println(theTree.findNode(4));
 
 	}
 
