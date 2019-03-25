@@ -9,40 +9,65 @@ public class BinaryTree {
 	public static void main(String[] args) {
 		
 		while(true) {
-		
-			System.out.println("ingrese números separados por coma...");
-	
-			Scanner scanner = new Scanner(System.in);
-			String inputString = scanner.nextLine();
-			System.out.println(inputString);
 			
-			if(inputString.equals("-1")) {
+			Scanner scanner = null;
+			String inputString = null;
+			
+			System.out.println("ingrese opción...");
+			System.out.println("1 ingresar números");
+			System.out.println("2 Busque distancia entre la raíz y un nodo en particular");
+			System.out.println("3 Busque la distancia entre dos nodos");
+			scanner = new Scanner(System.in);
+			String opcion = scanner.nextLine();
+			
+			switch (opcion) {
+			case "1":
+				System.out.println("ingrese números separados por coma...");
+				
+				scanner = new Scanner(System.in);
+				inputString = scanner.nextLine();
+				System.out.println(inputString);
+		
+				BinaryTree theTree = new BinaryTree();
+				
+				String[] data = inputString.split(",");
+		
+				for(int x = 0; x<data.length; x++) {
+					theTree.addNode(Integer.valueOf(data[x]));
+				}
+				
+		
+				// Different ways to traverse binary trees
+		
+				// theTree.inOrderTraverseTree(theTree.root);
+		
+				// theTree.preorderTraverseTree(theTree.root);
+		
+				// theTree.postOrderTraverseTree(theTree.root);
+		
+				// Find the node with key 75
+		
+				System.out.println("\nNode with the key 4");
+		
+				System.out.println(theTree.findNode(4));
+			
+				break;
+
+			case "2":
+
+				break;
+
+			case "3":
+
+				break;
+				
+			case "-1":
 				System.exit(0);
+				break;
+
+			default:
+				break;
 			}
-	
-			BinaryTree theTree = new BinaryTree();
-			
-			String[] data = inputString.split(",");
-	
-			for(int x = 0; x<data.length; x++) {
-				theTree.addNode(Integer.valueOf(data[x]));
-			}
-			
-	
-			// Different ways to traverse binary trees
-	
-			// theTree.inOrderTraverseTree(theTree.root);
-	
-			// theTree.preorderTraverseTree(theTree.root);
-	
-			// theTree.postOrderTraverseTree(theTree.root);
-	
-			// Find the node with key 75
-	
-			System.out.println("\nNode with the key 4");
-	
-			System.out.println(theTree.findNode(4));
-		
 		}
 
 	}
