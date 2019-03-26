@@ -37,7 +37,7 @@ public class BinaryTree {
 				String[] data = inputString.split(",");
 		
 				for(int x = 0; x<data.length; x++) {
-					theTree.addNode(Integer.parseInt(data[x]));
+					theTree.agregaNodo(Integer.parseInt(data[x]));
 				}
 				break;
 
@@ -47,7 +47,7 @@ public class BinaryTree {
 				scanner = new Scanner(System.in);
 				inputString = scanner.nextLine();
 				
-				int distancia = theTree.findNode(Integer.parseInt(inputString));
+				int distancia = theTree.encuentraNodo(Integer.parseInt(inputString));
 				System.out.println("La distancia es: "+ distancia);
 
 				break;
@@ -57,12 +57,12 @@ public class BinaryTree {
 				System.out.println("ingrese primer nodo a buscar...");
 				scanner = new Scanner(System.in);
 				inputString = scanner.nextLine();				
-				int primera = theTree.findNode(Integer.parseInt(inputString));
+				int primera = theTree.encuentraNodo(Integer.parseInt(inputString));
 				
 				System.out.println("ingrese segundo nodo a buscar...");
 				scanner = new Scanner(System.in);
 				inputString = scanner.nextLine();
-				int dist = theTree.findNode(Integer.parseInt(inputString));
+				int dist = theTree.encuentraNodo(Integer.parseInt(inputString));
 				System.out.println("Distancia total es: "+ calculaDistancia(primera, dist));
 				
 				break;
@@ -85,7 +85,7 @@ public class BinaryTree {
 		return distancia+dist;
 	}
 
-	public void addNode(int key) {
+	public void agregaNodo(int key) {
 
 		// Crea un nuevo nodo y lo inicializa
 
@@ -143,7 +143,7 @@ public class BinaryTree {
 
 	}
 
-	public int findNode(int key) {
+	public int encuentraNodo(int key) {
 
 		int x=0;
 		Node focusNode = raiz;
